@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Keil: Build LED",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile", "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}/scripts/build-keil.ps1"
+            ],
+            "group": {"kind": "build", "isDefault": true},
+            "problemMatcher": [],
+            "options": {"cwd": "${workspaceFolder}/USER"},
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "OpenOCD: Download LED (no debug)",
+            "type": "process",
+            "command": "${config:cortex-debug.openocdPath}",
+            "args": [
+                "-f", "debug/openocd.cfg",
+                "-c", "program {OBJ/LED.hex} verify reset exit"
+            ],
+            "problemMatcher": [],
+            "options": {"cwd": "${workspaceFolder}"},
+            "presentation": {"reveal": "always", "panel": "shared", "clear": true}
+        },
+        {
+            "label": "Keil: Build + Download LED (no debug)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Keil: Build LED",
+                "OpenOCD: Download LED (no debug)"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "STM32F407 - Build + Download (Ctrl+F5)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "noDebug": true,
+            "servertype": "openocd",
+            "cwd": "${workspaceFolder}/USER",
+            "executable": "${workspaceFolder}/OBJ/LED.axf",
+            "loadFiles": ["${workspaceFolder}/OBJ/LED.hex"],
+            "device": "STM32F407ZG",
+            "configFiles": ["${workspaceFolder}/debug/openocd.cfg"],
+            "preLaunchTask": "Keil: Build + Download LED (no debug)"
+        },
+        {
+            "name": "STM32F407 - Keil Build + OpenOCD",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceFolder}/USER",
+            "executable": "${workspaceFolder}/OBJ/LED.axf",
+            "loadFiles": ["${workspaceFolder}/OBJ/LED.hex"],
+            "device": "STM32F407ZG",
+            "configFiles": ["${workspaceFolder}/debug/openocd.cfg"],
+            "runToEntryPoint": "main",
+            "preLaunchTask": "Keil: Build LED"
+        },
+        {
+            "name": "STM32F407 - OpenOCD (existing AXF + HEX)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceFolder}/USER",
+            "executable": "${workspaceFolder}/OBJ/LED.axf",
+            "loadFiles": ["${workspaceFolder}/OBJ/LED.hex"],
+            "device": "STM32F407ZG",
+            "configFiles": ["${workspaceFolder}/debug/openocd.cfg"],
+            "runToEntryPoint": "main"
+        }
+    ]
+}
