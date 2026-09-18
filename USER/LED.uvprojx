@@ -385,6 +385,10 @@
         <Group>
           <GroupName>USER</GroupName>
           <Files>
+<File><FileName>task_scheduler.c</FileName><FileType>1</FileType><FilePath>.\task_scheduler.c</FilePath></File>
+<File><FileName>breath_task.c</FileName><FileType>1</FileType><FilePath>.\breath_task.c</FilePath></File>
+<File><FileName>siren_task.c</FileName><FileType>1</FileType><FilePath>.\siren_task.c</FilePath></File>
+
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>

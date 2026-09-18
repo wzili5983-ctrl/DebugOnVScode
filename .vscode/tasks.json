@@ -9,7 +9,7 @@
                 "-NoProfile", "-ExecutionPolicy", "Bypass",
                 "-File", "${workspaceFolder}/scripts/build-keil.ps1"
             ],
-            "group": {"kind": "build", "isDefault": true},
+            "group": "build",
             "problemMatcher": [],
             "options": {"cwd": "${workspaceFolder}/USER"},
             "presentation": {"reveal": "always", "panel": "shared", "clear": true}
@@ -33,7 +33,7 @@
                 "Keil: Build LED",
                 "OpenOCD: Download LED (no debug)"
             ],
-            "group": "build",
+            "group": {"kind": "build", "isDefault": true},
             "problemMatcher": []
         }
     ]

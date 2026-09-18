@@ -1,4 +1,5 @@
 ..\obj\main.o: main.c
+..\obj\main.o: ..\HARDWARE\LED\led.h
 ..\obj\main.o: ..\SYSTEM\sys\sys.h
 ..\obj\main.o: ..\USER\stm32f4xx.h
 ..\obj\main.o: ..\CORE\core_cm4.h
@@ -35,7 +36,5 @@
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\main.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
-..\obj\main.o: ..\SYSTEM\delay\delay.h
-..\obj\main.o: ..\SYSTEM\usart\usart.h
-..\obj\main.o: D:\Keil 5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
-..\obj\main.o: ..\HARDWARE\LED\led.h
+..\obj\main.o: task_scheduler.h
+..\obj\main.o: app_tasks.h
