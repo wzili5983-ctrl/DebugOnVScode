@@ -13,8 +13,8 @@ void LED_Init(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_Init(GPIOF, &GPIO_InitStructure);
-	
+
+	/* PF9 is the active-low breathing LED and is initialized above. */
 	GPIO_ResetBits(GPIOF, GPIO_Pin_8);
 	GPIO_SetBits(GPIOF,GPIO_Pin_9 | GPIO_Pin_10);
-
 }
